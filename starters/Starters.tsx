@@ -32,6 +32,7 @@ const Starters = (props: Props) => {
     async function load() {
         canvas = document.getElementById("canvas") as HTMLCanvasElement;
         context = canvas?.getContext("2d") as CanvasRenderingContext2D;
+        setIsloading(true)
   
         const SkeletonRenderer_ =  (await import('@esotericsoftware/spine-canvas')).SkeletonRenderer
         skeletonRenderer = new SkeletonRenderer_(context);
@@ -74,7 +75,6 @@ const Starters = (props: Props) => {
         // animationState.setAnimation(0, "attack/melee/horn-gore", false);
   
         // Start rendering.
-        setIsloading(true)
         requestAnimationFrame(render);
         setIsloading(false)
 
