@@ -8,6 +8,7 @@ const Starters = (props: Props) => {
 
     const id = ['1',"2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
     const [direction, setDirection] = useState(1)
+    const [axie, setAxie] = useState<string>('1')
 
     let lastFrameTime = Date.now() / 1000;
     let canvas: HTMLCanvasElement;
@@ -22,11 +23,8 @@ const Starters = (props: Props) => {
       height: number;
     }
   
-    let axie = '1';
-  
     const handleSelect = (value:string)=>{
-        axie = value
-        load()
+        setAxie(value)
     }
 
     async function load() {
@@ -111,7 +109,7 @@ const Starters = (props: Props) => {
   
     useEffect(() => {
       load()
-    }, [direction])
+    }, [direction, axie])
     
   
       
