@@ -32,6 +32,7 @@ const Starters = (props: Props) => {
     async function load() {
         canvas = document.getElementById("canvas") as HTMLCanvasElement;
         context = canvas?.getContext("2d") as CanvasRenderingContext2D;
+        context.clearRect(0, 0, canvas.width, canvas.height)
         setIsloading(true)
   
         const SkeletonRenderer_ =  (await import('@esotericsoftware/spine-canvas')).SkeletonRenderer
