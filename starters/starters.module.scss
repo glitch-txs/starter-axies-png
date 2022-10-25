@@ -1,0 +1,120 @@
+$toggle-background-color-on: #ff4040;
+$toggle-background-color-off: #1C1F25;
+$toggle-control-color: #0D0E12;
+$toggle-width: 100px;
+$toggle-height: 30px;
+$toggle-gutter: 5px;
+$toggle-radius: 50%;
+$toggle-control-speed: .15s;
+$toggle-control-ease: ease-in;
+
+// These are our computed variables
+// change at your own risk.
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+.container{
+    width: 100%;
+    height: 18vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-width:682px){
+    .container{
+        flex-direction: column;
+        gap: 30px;
+        height:auto;
+        margin-bottom: 50px;
+    }
+}
+
+.btn{
+    background:linear-gradient(104.04deg,#ff6c6c,#ff4040);
+    color: rgb(255, 255, 255);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    border: 0;
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+    padding: 0 16px;
+    width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background:#ff4040;
+}
+
+.select{
+    width: 100px;
+    text-align: center;
+    background-color: #323336;
+    color: #fff;
+    font-weight: 700;
+    padding:  10px 0;
+    border-radius: 8px;
+    border: 2px solid #ff4040;
+    cursor: pointer;
+}
+
+
+.title{
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffe8e8;
+}
+
+.toggleControl{
+    margin-bottom: 50px;
+    display: block;
+    position: relative;
+    padding-left: $toggle-width;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+  
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+  
+    input:checked ~ .control {
+      background-color: $toggle-background-color-on;
+      
+      &:after {
+        left: $toggle-width - $toggle-control-size - $toggle-gutter;
+      }
+    }
+  
+    .control {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $toggle-height;
+      width: $toggle-width;
+      border-radius: $toggle-radius;
+      background-color: $toggle-background-color-off;
+      transition: background-color $toggle-control-speed $toggle-control-ease;
+  
+      &:after {
+        content: "";
+        position: absolute;
+        left: $toggle-gutter;
+        top: $toggle-gutter;
+        width: $toggle-control-size;
+        height: $toggle-control-size;
+        border-radius: $toggle-radius;
+        background: $toggle-control-color;
+        transition: left $toggle-control-speed $toggle-control-ease;
+      }
+    }
+  }
