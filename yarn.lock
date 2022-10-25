@@ -44,6 +44,20 @@
   "resolved" "https://registry.npmjs.org/@esotericsoftware/spine-core/-/spine-core-4.2.9.tgz"
   "version" "4.2.9"
 
+"@esotericsoftware/spine-player@^4.2.9":
+  "integrity" "sha512-4sjqoPyvh9rkx9iooUBQYmbZfOVLMwWsU8+zwwQm+sdpgC7xbv/b2raQ1Wsh+ca26E3lWsXMl73zeHNEtUY3Fg=="
+  "resolved" "https://registry.npmjs.org/@esotericsoftware/spine-player/-/spine-player-4.2.9.tgz"
+  "version" "4.2.9"
+  dependencies:
+    "@esotericsoftware/spine-webgl" "^4.2.9"
+
+"@esotericsoftware/spine-webgl@^4.2.9":
+  "integrity" "sha512-WX12dqz0zl0+JXxLsxhcpabtthnCiWnubDZNZdBpNOrjo/n8zejFVMrHpP4ToXt/UILtO0P+D/uus93XdQNNzw=="
+  "resolved" "https://registry.npmjs.org/@esotericsoftware/spine-webgl/-/spine-webgl-4.2.9.tgz"
+  "version" "4.2.9"
+  dependencies:
+    "@esotericsoftware/spine-core" "^4.2.9"
+
 "@humanwhocodes/config-array@^0.11.6":
   "integrity" "sha512-jJr+hPTJYKyDILJfhNSHsjiwXYf26Flsz8DvNndOsHs5pwSnpGUEy8yzF0JYhCEvTDdV2vuOK5tt8BVhwO5/hg=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.6.tgz"

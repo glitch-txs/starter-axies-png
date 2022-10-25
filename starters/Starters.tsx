@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { PuffLoading } from './puff-loading/PuffLoading'
 import style from './starters.module.scss'
 
 type Props = {}
@@ -9,6 +10,7 @@ const Starters = (props: Props) => {
     const id = ['1',"2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
     const [direction, setDirection] = useState(1)
     const [axie, setAxie] = useState<string>('1')
+    const [isLoading, setIsloading] = useState<boolean>(false)
 
     let lastFrameTime = Date.now() / 1000;
     let canvas: HTMLCanvasElement;
@@ -72,7 +74,10 @@ const Starters = (props: Props) => {
         // animationState.setAnimation(0, "attack/melee/horn-gore", false);
   
         // Start rendering.
+        setIsloading(true)
         requestAnimationFrame(render);
+        setIsloading(false)
+
       }
   
       function render() {
@@ -126,6 +131,7 @@ const Starters = (props: Props) => {
 
   return (
     <div>
+      { isLoading ? <PuffLoading size={300}/> : <></> }
       <canvas id="canvas" style={{width: '100%', height: '80vh', backgroundColor: 'transparent'}}></canvas>
       <div className={style.container}>
       <select className={style.select} name="axie" id="axie"  onChange={(e)=> handleSelect(e.target.value)}>
